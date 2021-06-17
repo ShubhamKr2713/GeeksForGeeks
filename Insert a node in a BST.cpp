@@ -14,6 +14,31 @@ struct Node {
     }
 };
 
+//ITERATIVE SOLN
+Node* insert(Node* root, int x)
+{
+    Node *temp=new Node(x);
+    Node *parent=NULL, *curr=root;
+    while(curr!=NULL)
+    {
+        parent=curr;
+        if(curr->data>x)
+        curr=curr->left;
+        else if(curr->data<x)
+        curr=curr->right;
+        else
+        return root;
+    }
+    if(parent==NULL)
+    return temp;
+    else if(parent->data>x)
+    parent->left=temp;
+    else
+    parent->right=temp;
+    
+    return root;
+    
+}
 
 
 Node* insert(Node* node, int data);
