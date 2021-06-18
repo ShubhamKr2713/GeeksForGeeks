@@ -119,13 +119,11 @@ int findCeil(Node* root, int x)
     int res=INT_MAX;
     while(root!=NULL)
     {
-        if(root->data==x)
-        return root->data;
-        else if(root->data<x)
+         if(root->data<x)
         root=root->right;
         else
         {
-            res=min(res,root->data);
+            res=root->data;
             root=root->left;
         }
     }
