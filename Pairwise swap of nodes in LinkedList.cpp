@@ -1,3 +1,34 @@
+//best
+struct Node* pairwise_swap(struct Node* head)
+{
+    if(head==NULL || head->next==NULL)
+    return head;
+    
+    Node* prev=head;
+    Node* curr=head->next;
+    
+    head=curr;
+    
+    while(1)
+    {
+        Node* next=curr->next;
+        curr->next=prev;
+        
+        if(next==NULL || next->next==NULL)
+        {
+            prev->next=next;
+            break;
+        }
+        prev->next=next->next;
+        
+        prev=next;
+        curr=prev->next;
+    }
+    return head;
+    // your code here
+}
+
+
 // { Driver Code Starts
 //Initial Template for C++
 
