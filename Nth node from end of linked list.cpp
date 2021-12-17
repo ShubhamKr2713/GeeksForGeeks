@@ -1,3 +1,29 @@
+//Best
+int getNthFromLast(Node *head, int n)
+{
+    Node *fast,*slow;
+    fast=slow=head;
+    
+    while(n--)
+    {
+        if(fast==NULL)
+    return -1;
+        fast=fast->next;
+    }
+    
+    
+    while(fast!=NULL)
+    {
+        slow=slow->next;
+        fast=fast->next;
+    }
+    
+    return slow->data;
+       // Your code here
+}
+
+
+
 int checkSize(Node *head)
 {
     int res=0;
